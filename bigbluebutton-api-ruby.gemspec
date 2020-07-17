@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.description      = "Provides methods to access BigBlueButton in a ruby application through its API"
   s.authors          = ["Mconf", "Leonardo Crauss Daronco"]
   s.email            = ["contact@mconf.org", "leonardodaronco@gmail.com"]
-  s.homepage         = "https://github.com/mconf/bigbluebutton-api-ruby/"
+  s.homepage         = "https://github.com/not-informatyka/bigbluebutton-api-ruby/"
   s.bindir           = "bin"
   s.files            = `git ls-files`.split("\n")
   s.require_paths    = ["lib"]

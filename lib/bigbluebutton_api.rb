@@ -541,6 +541,27 @@ module BigBlueButton
     end
 
 
+    # Generate one or more videos for a given recordID (or set of record IDs).
+    # recordIDs (string, Array)::  ID or IDs of the target recordings.
+    #                              Any of the following values are accepted:
+    #                                "id1"
+    #                                "id1,id2,id3"
+    #                                ["id1"]
+    #                                ["id1", "id2", "id3"]
+    # options (Hash)::        Hash with additional parameters. This method doesn't accept additional
+    #                         parameters, but if you have a custom API with more parameters, you
+    #                         can simply pass them in this hash and they will be added to the API call.
+    #
+    # === Example responses
+    #
+    #   { :returncode => true, :generating => true }
+    #
+    def generate_videos(recordIDs, options={})
+      recordIDs = recordIDs.join(",") if recordIDs.instance_of?(Array) # ["id1", "id2"] becomes "id1,id2"
+      params = { :recordID => recordIDs }.merge(options)
+      send_api_request(:generateVideo, params)
+    end
+
     #
     # API calls since 0.81
     #
